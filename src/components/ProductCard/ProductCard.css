@@ -20,4 +20,10 @@
 
 .add-btn {
     width: 100%;
+
+}
+
+.p-fieldset-legend {
+    background-color: rgb(224, 183, 255);
+   padding: 10px;
 }

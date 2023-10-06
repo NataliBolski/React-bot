@@ -4,14 +4,14 @@ import { ProductCard } from '../ProductCard/ProductCard'
 import './ProductList.css'
 
 const products = [
-  { id: '1', title: "Python-Start", price: 27500, description: "Изучение языка Python с помощью майнкрафта" },
-  { id: '2', title: "Python-Junior", price: 35000, description: "Углубленное изучение языка Python" },
-  { id: '3', title: "Python-Middle", price: 35000, description: "Создание сайтов и веб-приложений" },
-  { id: '4', title: "Python-Proffecional", price: 40000, description: "Изучение дата-сайнс, апи, углубление изучение бэкенда" },
-  { id: '5', title: "GameDev", price: 30000, description: "Создание игр, 3Д-моделирование" },
-  { id: '6', title: "Scratch", price: 25000, description: "Программирование для детей" },
-]
+  {id: '1', title: "Helicopter#1", price: 350000000, description: "Летает, не бит не крашен", image: "../../assets/helicopter.jpeg"},
+  {id: '2', title: "Helicopter#2", price: 450000000, description: "Летала девушка, один хозяин", image: "../../assets/helicopter.jpeg"},
+  {id: '3', title: "Helicopter#3", price: 550000000, description: "Летал только в выходные", image: "../../assets/helicopter.jpeg"},
+  {id: '4', title: "Helicopter#4", price: 650000000, description: "Заливали только ракетное топливо", image: "../../assets/helicopter.jpeg"},
+  {id: '5', title: "Helicopter#5", price: 750000000, description: "Обмен на квартиру", image: "/src/assets/helicopter.webp"},
+  {id: '6', title: "Helicopter#6", price: 850000000, description: "Продам гараж, в подарок вертолет, торг, обмен, рассрочка, кредит, лизинг", image: "/src/assets/helicopter.webp"},
 
+]
 const getTotalPrice = (items) => {
   return items.reduce((acc, item) => {
     return acc += item.price
