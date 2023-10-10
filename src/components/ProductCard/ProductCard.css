@@ -2,28 +2,75 @@
     display: flex;
     flex-direction: column;
     border: 1px solid var(--tg-theme-button-color);
-    padding: 15px;
-    width: 170px;
+    width: 270px;
+    padding-left: 15px;
+
+
 }
 
-.img {
-    width: 100%;
-    background: lightgray;
-    height: 100px;
-    margin: 0 auto;
-    background: var(--tg-theme-button-color);
+.img img{
+    height: 200px;
+    width:  250px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .description {
-    font-size: 0.8em;
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.price {
+    text-align: center;
 }
 
 .add-btn {
-    width: 100%;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  background-color: #ff9900;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease; 
+}
 
+.add-btn:hover{
+    transform: scale(1.1); /* Увеличиваем размер ленты на 10% при наведении */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.add-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid #ff9900;
+  }
+
+.buy {
+    margin-top: -10px;
 }
 
 .p-fieldset-legend {
-    background-color: rgb(224, 183, 255);
-   padding: 10px;
+background-color: rgb(117 113 250);
+padding: 15px;
+border-radius: 50%;
+text-align: center;
 }
+
+.p-fieldset{
+    margin: 30px;
+}
+
+.p-icon {
+    color: white;
+}
+
