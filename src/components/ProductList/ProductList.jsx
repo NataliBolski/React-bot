@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useTelegram } from '../../hooks/useTelegram'
 import { ProductCard } from '../ProductCard/ProductCard'
+import { ModalDelete } from '../Modals/ModalDelete';
 import './ProductList.css'
 
 const products = [
@@ -21,6 +22,7 @@ const getTotalPrice = (items) => {
 }
 
 export const ProductList = () => {
+
 
   const { tg, queryId } = useTelegram()
   const [addedItems, setAddedItems] = useState([])
@@ -71,15 +73,32 @@ export const ProductList = () => {
     }
   }
 
+  const onDelete = (productId) => {
+    const newItems = addedItems.filter(item => item.id !== productId);
+    setAddedItems(newItems);
+  
+    if (newItems.length === 0) {
+      tg.MainButton.hide();
+    } else {
+      tg.MainButton.show();
+      tg.MainButton.setParams({
+        text: `Купить ${getTotalPrice(newItems)}`
+      });
+    }
+  };
+
   return (
     <div className={'list'}>
-      {products.map(item => (
-        <ProductCard
-          product={item}
-          onAdd={onAdd}
-          className={'item'}>
-        </ProductCard>
-      ))}
+        {products.map(item => (
+          <ProductCard
+            key={item.id}
+            product={item}
+            onAdd={onAdd}
+            onDelete={() => onDelete(item.id)}  
+            className={'item'}
+          />
+         ))}
     </div>
-  )
-}
+  );
+};
+

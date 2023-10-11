@@ -7,6 +7,7 @@ export const ModalDelete = ({ products, onDelete, visible, setVisible }) => {
   const [inputId, setInputId] = useState('');
 
   const handleDelete = () => {
+    console.log("Deleting product with id:", inputId);
     onDelete(inputId);
     setVisible(false);
   };
@@ -23,3 +24,4 @@ export const ModalDelete = ({ products, onDelete, visible, setVisible }) => {
     </Dialog>
   );
 };
+

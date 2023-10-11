@@ -2,3 +2,8 @@
 .productId {
     margin: 0 auto;
 }
+
+.editCont {
+    height: 400px;
+    width: 400px;
+}
